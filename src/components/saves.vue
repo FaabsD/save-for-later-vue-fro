@@ -2,14 +2,18 @@
     <div>
         <h1>Opgeslagen websites voor later</h1>
         <div v-bind:key="save.id" v-for="save in saves">
-            <h3>{{save.naam_site}}</h3>
+            <SaveItem v-bind:save="save" />
 
         </div>
     </div>
 </template>
 <script>
+import SaveItem from './saveItem';
 export default {
     name: "Saves",
+    components: {
+        SaveItem
+    },
     props: ["saves"]
 }
 </script>
