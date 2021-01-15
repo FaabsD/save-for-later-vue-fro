@@ -1,18 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <Header/>
+    <AddSave v-on:add-save="addSave" />
     {{msg}}
     <Saves v-bind:saves="saves" v-on:del-save="deleteSave" />
   </div>
 </template>
 
 <script>
+import Header from './components/layout/header';
 import Saves from './components/saves';
+import AddSave from './components/addSave';
 
 export default {
   name: 'App',
   components: {
-    Saves
+    Header,
+    Saves,
+    AddSave
   },
   data() {
     return{
@@ -37,6 +42,9 @@ export default {
   methods: {
     deleteSave(id) {
       this.saves = this.saves.filter(save => save.id !== id);
+    },
+    addSave(newSave) {
+      this.saves = [...this.saves, newSave];
     }
   }
 }
@@ -51,5 +59,13 @@ export default {
   body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
+  }
+  .knop {
+    display: block;
+    border: none;
+    background-color: aquamarine;
+    color: whitesmoke;
+    padding: .5rem 1rem;
+    cursor: pointer;
   }
 </style>
