@@ -1,5 +1,6 @@
 <template>
-    <div class="saved-item">
+    <div class="saved-item" v-bind:class="{'visited':save.bekeken}">
+        <input type="checkbox" v-on:change="markVisited">
         <p>{{save.naam_site}}</p>
     </div>
 </template>
@@ -7,7 +8,12 @@
 <script>
 export default {
     name: "SaveItem",
-    props:["save"]
+    props:["save"],
+    methods: {
+        markVisited() {
+            this.save.bekeken = !this.save.bekeken;
+        }
+    }
 }
 </script>
 
