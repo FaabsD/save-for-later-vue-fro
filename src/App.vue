@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     {{msg}}
-    <Saves v-bind:saves="saves" />
+    <Saves v-bind:saves="saves" v-on:del-save="deleteSave" />
   </div>
 </template>
 
@@ -23,8 +23,20 @@ export default {
           site_url: "https://www.reddit.com/r/entitledparents/",
           omschrijving: "Een reddit pagina verhalen van mensen die in conflict raakten met (op zijn engels) entitleed parents (sommige zijn waarschijnlijk verzonnen)",
           bekeken: false
+        },
+        {
+          id: 2,
+          naam_site: "Reddit r/entitledparents",
+          site_url: "https://www.reddit.com/r/entitledparents/",
+          omschrijving: "Een reddit pagina verhalen van mensen die in conflict raakten met (op zijn engels) entitleed parents (sommige zijn waarschijnlijk verzonnen)",
+          bekeken: false
         }
       ]
+    }
+  },
+  methods: {
+    deleteSave(id) {
+      this.saves = this.saves.filter(save => save.id !== id);
     }
   }
 }

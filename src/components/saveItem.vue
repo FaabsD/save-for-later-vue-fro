@@ -2,6 +2,7 @@
     <div class="saved-item" v-bind:class="{'visited':save.bekeken}">
         <input type="checkbox" v-on:change="markVisited">
         <p>{{save.naam_site}}</p>
+        <button @click="$emit('del-save', save.id)" class="del">x</button>
     </div>
 </template>
 
