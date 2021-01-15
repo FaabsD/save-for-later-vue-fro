@@ -30,7 +30,7 @@ export default {
     .del {
         background-color: #ff0000;
         color: #ffffff;
-        padding: 1.5rem 2rem;
+        padding: .5rem;
         cursor: pointer;
         float: right;
     }
