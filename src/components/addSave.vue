@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-import uuid from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 export default {
     name: "AddSave",
     data() {
@@ -22,7 +22,7 @@ export default {
     methods: {
         addSave() {
             const newSave = {
-                id: uuid.v4(),
+                id: uuidv4(),
                 naam_site: this.naam_site,
                 site_url: this.site_url,
                 omschrijving: this.omschrijving,
