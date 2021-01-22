@@ -3,6 +3,9 @@
 ## link naar les
 https://blanken5.home.xs4all.nl/presReveal/vueIntro.html#/4
 
+## link naar live versie
+<http://19959.hosts1.ma-cloud.nl/safe-for-later-vue/>
+
 ## 8-1-2020
 ga verder vanaf 29:37
 
