@@ -20,7 +20,8 @@ export default {
         }
     },
     methods: {
-        addSave() {
+        addSave(e) {
+            e.preventDefault();
             const newSave = {
                 id: uuidv4(),
                 naam_site: this.naam_site,
@@ -30,6 +31,10 @@ export default {
             }
             // stuur naar parent
             this.$emit('add-save', newSave);
+
+            this.naam_site = '';
+            this.site_url = '';
+            this.omschrijving = '';
         }
     }
 }
