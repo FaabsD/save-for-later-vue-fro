@@ -4,7 +4,10 @@
             <input type="checkbox" v-on:change="markVisited">
             <span class="check"></span>
         </label>
-        <p>{{save.naam_site}}</p>
+        <img v-bind:src="save.afbeelding" alt="">
+        <h2>{{save.naam_site}}</h2>
+        <a v-bind:href="save.site_url">Link naar site</a>
+        <p>{{save.omschrijving}}</p>
         <button @click="$emit('del-save', save.id)" class="del">x</button>
     </div>
 </template>
@@ -25,10 +28,34 @@ export default {
     .saved-item {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         background-color: lightgrey;
         padding: 1rem;
+    }
+    .saved-item img{
+        align-self: flex-end;
+        width: 15%;
+        height: 15%;
+        object-fit: cover;
+    }
+    .saved-item h2 {
+        color: aquamarine;
+        text-shadow: 1px 0 3px #000000;
+        line-height: 1.5;
+    }
+    .saved-item a {
+        text-decoration: none;
+        color: black;
+        background-color: aquamarine;
+        box-sizing: border-box;
+        border-radius: 1rem;
+        padding: .5rem;
+
+    }
+    .saved-item p {
+        margin: .5rem 0 .5rem 0;
+        line-height: 1.5;
     }
     .visited {
         color: red;

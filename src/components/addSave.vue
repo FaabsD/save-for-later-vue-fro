@@ -3,6 +3,7 @@
         <form @submit="addSave">
             <input type="text" v-model="naam_site" name="naam_site" placeholder="Naam website">
             <input type="text" v-model="site_url" name="site_url" placeholder="bijv. http://facebook.com" >
+            <input type="text" v-model="afbeelding" name="afbeelding" placeholder="Link naar afbeelding">
             <textarea v-model="omschrijving" name="omschrijving" cols="30" rows="10" placeholder="Omschrijving"></textarea>
             <input type="submit" value="Opslaan" class="knop">
         </form>
@@ -16,6 +17,7 @@ export default {
         return {
             naam_site: '',
             site_url: '',
+            afbeelding: '',
             omschrijving: ''
         }
     },
@@ -26,6 +28,7 @@ export default {
                 id: uuidv4(),
                 naam_site: this.naam_site,
                 site_url: this.site_url,
+                afbeelding: this.afbeelding,
                 omschrijving: this.omschrijving,
                 bekeken: false
             }
@@ -34,6 +37,7 @@ export default {
 
             this.naam_site = '';
             this.site_url = '';
+            this.afbeelding = '';
             this.omschrijving = '';
         }
     }
